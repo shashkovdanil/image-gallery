@@ -1,0 +1,18 @@
+.flex-container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    width: 1280px;
+    margin: 0 auto;
+}
+
+.flex-item {
+}
+
+figure {
+    margin: 10px;
+}
+
+img {
+    width: 333px;
+}
