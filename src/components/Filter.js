@@ -1,20 +1,14 @@
-import React, { Component, PropTypes } from 'react';
+import React, { PropTypes } from 'react';
 
-class Filter extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            filter: '',
-        };
-    }
+const Filter = (props) => (
+    <input type="text"
+           onChange={props.filterImages}
+           value={props.queryFilter} />
+);
 
-    render() {
-        return(
-            <input type="text"
-                   onChange={this.props.filterPhotos}
-                   value={this.props.value} />
-        );
-    }
-}
+Filter.propTypes = {
+    filterImages: PropTypes.func.isRequired,
+    queryFilter: PropTypes.string,
+};
 
 export default Filter;

@@ -1,17 +1,17 @@
 import React, { PropTypes } from 'react';
 
-const Photo = (props) => (
+const Image = (props) => (
      <div className="flex-item">
-         <figure>
-             <img src={props.src} style={{ width: props.width }} />
+         <figure style={{ height: props.width }}>
+             <img src={props.src} style={{ width: props.width, backgroundSize: 'cover', height: 'inherit' }} />
              <figcaption>{props.name}</figcaption>
          </figure>
      </div>
 );
 
-Photo.propTypes = {
+Image.propTypes = {
     src: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
 };
 
-export default Photo;
+export default Image;

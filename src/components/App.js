@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 
 import Filter from './Filter';
-import PhotoGrid from './PhotosGrid';
+import ImagesGrid from './ImagesGrid';
 import Slider from './Slider';
-import photos from '../data/photos';
+
+import images from '../data/images';
 
 class App extends Component {
     constructor(props) {
@@ -11,7 +12,7 @@ class App extends Component {
         this.handleFilter = this.handleFilter.bind(this);
         this.handleChange = this.handleChange.bind(this);
         this.state = {
-            visiblePhotos: photos,
+            visiblePhotos: images,
             filter: '',
             position: '4',
             width: '250px',
@@ -59,9 +60,9 @@ class App extends Component {
     }
 
     renderFilteredPhotos(filter) {
-        let filteredPhotos = photos.filter(
-            (photo) => (
-                photo.name.indexOf(filter.toLowerCase()) !== -1
+        let filteredPhotos = images.filter(
+            (image) => (
+                image.name.indexOf(filter.toLowerCase()) !== -1
             )
         );
         this.setState({
@@ -74,10 +75,10 @@ class App extends Component {
             <div>
                 <Slider value={this.state.position}
                         changeQtyPhotosInRow={this.handleChange} />
-                <Filter value={this.state.filter}
-                        filterPhotos={this.handleFilter} />
-                <PhotoGrid photos={this.state.visiblePhotos}
-                           changedWidth={this.state.width} />
+                <Filter queryFilter={this.state.filter}
+                        filterImages={this.handleFilter} />
+                <ImagesGrid images={this.state.visiblePhotos}
+                            imageWidth={this.state.width} />
             </div>
         );
     }
