@@ -62,7 +62,7 @@ class App extends Component {
     renderFilteredPhotos(filter) {
         let filteredPhotos = images.filter(
             (image) => (
-                image.name.indexOf(filter.toLowerCase()) !== -1
+                image.name.toLowerCase().indexOf(filter.toLowerCase()) !== -1
             )
         );
         this.setState({
