@@ -2,6 +2,8 @@ import React, { PropTypes } from 'react';
 
 import Image from './Image';
 
+import css from '../styles/ImagesGrid.less';
+
 const ImagesGrid = (props) => (
     <div className="flex-container">
         {
@@ -9,7 +11,7 @@ const ImagesGrid = (props) => (
                 (image) =>
                     <Image key={image.id}
                            src={image.src}
-                           width={props.imageWidth}
+                           width={props.width}
                            name={image.name} />
             )
         }
@@ -18,7 +20,7 @@ const ImagesGrid = (props) => (
 
 ImagesGrid.propTypes = {
     images: PropTypes.array.isRequired,
-    imageWidth: PropTypes.string.isRequired,
+    width: PropTypes.string.isRequired,
 };
 
 export default ImagesGrid;

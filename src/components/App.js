@@ -6,36 +6,40 @@ import Slider from './Slider';
 
 import images from '../data/images';
 
+import css from '../styles/App.less';
+
 class App extends Component {
     constructor(props) {
         super(props);
-        this.handleFilter = this.handleFilter.bind(this);
-        this.handleChange = this.handleChange.bind(this);
+        this.handleChangeFilter = this.handleChangeFilter.bind(this);
+        this.handleChangeSlider = this.handleChangeSlider.bind(this);
         this.state = {
-            visiblePhotos: images,
+            visibleImages: images,
             filter: '',
             position: '4',
             width: '250px',
         };
     }
 
-    handleFilter(e) {
+    handleChangeFilter(e) {
+        let filter = e.target.value;
         this.setState({
-            filter: e.target.value,
+            filter,
         });
-        this.renderFilteredPhotos(e.target.value);
+        this.renderFilteredImages(filter);
     }
 
-    handleChange(e) {
+    handleChangeSlider(e) {
+        let position = e.target.value;
         this.setState({
-            position: e.target.value,
+            position,
         });
-        this.changePhotoSize(e.target.value);
+        this.changeImageSize(position);
     }
 
-    changePhotoSize(width) {
+    changeImageSize(position) {
         let newWidthPhoto;
-        switch(width) {
+        switch(position) {
             case '1':
                 newWidthPhoto = '1000px';
                 break;
@@ -59,26 +63,26 @@ class App extends Component {
         });
     }
 
-    renderFilteredPhotos(filter) {
-        let filteredPhotos = images.filter(
+    renderFilteredImages(filter) {
+        let filteredImages = images.filter(
             (image) => (
                 image.name.toLowerCase().indexOf(filter.toLowerCase()) !== -1
             )
         );
         this.setState({
-            visiblePhotos: filteredPhotos,
+            visibleImages: filteredImages,
         });
     }
 
     render() {
         return(
             <div>
+                <Filter value={this.state.filter}
+                        onChange={this.handleChangeFilter} />
                 <Slider value={this.state.position}
-                        changeQtyPhotosInRow={this.handleChange} />
-                <Filter queryFilter={this.state.filter}
-                        filterImages={this.handleFilter} />
-                <ImagesGrid images={this.state.visiblePhotos}
-                            imageWidth={this.state.width} />
+                        onChange={this.handleChangeSlider} />
+                <ImagesGrid images={this.state.visibleImages}
+                            width={this.state.width} />
             </div>
         );
     }
