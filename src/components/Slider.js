@@ -1,5 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 
+import css from '../styles/Slider.less';
+
 const Slider = (props) => (
     <input type="range"
            min="1"

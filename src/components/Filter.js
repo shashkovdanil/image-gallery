@@ -3,7 +3,7 @@ import React, { PropTypes } from 'react';
 import css from '../styles/Filter.less';
 
 const Filter = (props) => (
-    <div className="filter-div">
+    <div className="filter-wrapper">
         <input type="text"
            placeholder="...filter"
            className="filter-bar"
