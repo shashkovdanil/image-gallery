@@ -1,3 +1,5 @@
+@import '_variables.less';
+
 figure {
     margin: 10px;
 }
@@ -7,11 +9,11 @@ figcaption {
 }
 
 .flex-item {
-    background-color: #fafafa;
+    background-color: @bg-image;
     margin: 10px;
-    transition: all .2s ease-in-out;
+    .transition();
     &:hover {
-        box-shadow: 0 15px 20px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 15px 20px @shadow-color-image;
         transform: translate(0, -4px);
     }
 }

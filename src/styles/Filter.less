@@ -1,22 +1,27 @@
+@import '_variables.less';
+
 .filter-wrapper {
-    width: 700px;
-    height: 30px;
+    width: @filter-wrapper-width;
+    height: @filter-wrapper-height;
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
-    margin: auto;
-    margin-top: 25px;
-    margin-bottom: 25px;
+    margin: 25px auto;
 }
 
 .filter-bar {
-    width: 690px;
-    height: 100%;
-    border: 1px solid lightgray;
+    width: @filter-bar-width;
+    height: @filter-bar-height;
+    border: 1px solid @border-color-filter;
     font-style: italic;
-    border-radius: 5px;
-    padding-left: 10px;
+    border-radius: 2px;
+    padding-left: @padding-in-filter-bar;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08);
+    .transition();
+    &:hover {
+        box-shadow: 0 3px 8px rgba(0, 0, 0, .2), 0 0 0 1px rgba(0, 0, 0, .08);
+    }
     &:focus {
         outline: none;
     }
