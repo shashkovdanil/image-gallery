@@ -1,27 +1,14 @@
 {
   "name": "image-gallery",
   "version": "1.0.0",
-  "description": "Little Image Gallery",
+  "description": "Image Gallery on React and Redux",
   "main": "index.js",
+  "repository": "https://github.com/shashkovdanil/image-gallery",
+  "author": "shashkovdanil <shashkovdanil@gmail.com>",
+  "license": "MIT",
   "scripts": {
     "start": "webpack-dev-server",
     "build": "webpack"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/shashkovdanil/image-gallery.git"
-  },
-  "author": "Shashkov",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/shashkovdanil/image-gallery/issues"
-  },
-  "homepage": "https://github.com/shashkovdanil/image-gallery#readme",
-  "dependencies": {
-    "react": "^15.4.2",
-    "react-dom": "^15.4.2",
-    "react-redux": "^5.0.3",
-    "redux": "^3.6.0"
   },
   "eslintConfig": {
     "extends": "airbnb",
@@ -41,6 +28,12 @@
     "plugins": [
       "react-hot-loader/babel"
     ]
+  },
+  "dependencies": {
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "react-redux": "^5.0.3",
+    "redux": "^3.6.0"
   },
   "devDependencies": {
     "babel-core": "^6.22.1",
