@@ -1,4 +1,4 @@
-# test-app-fastdev
+# Image Gallery on React and Redux
 
 ### Run
 ```
