@@ -1,4 +1,9 @@
-# Image Gallery on React and Redux
+# Image Gallery on React
+
+### Install dependencies
+```
+yarn install
+```
 
 ### Run app
 ```

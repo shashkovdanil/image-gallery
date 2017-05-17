@@ -2,19 +2,27 @@ import React, { PropTypes } from 'react';
 
 import Image from './Image';
 
-import css from '../styles/ImagesGrid.less';
+import '../styles/ImagesGrid.less';
 
-const ImagesGrid = ({ store }) => (
+const ImagesGrid = ({ images, width }) => (
   <div className="flex-container">
-    {store.filterReducer.map(
-        image => <Image
-          key={image.id}
-          src={image.src}
-          name={image.name}
-          width={store.sizeReducer}
-        />,
-      )}
+    {
+      images.map(
+        image =>
+          <Image
+            key={image.id}
+            src={image.src}
+            width={width}
+            name={image.name}
+          />,
+      )
+    }
   </div>
 );
+
+ImagesGrid.propTypes = {
+  images: PropTypes.arrayOf(PropTypes.object).isRequired,
+  width: PropTypes.string.isRequired,
+};
 
 export default ImagesGrid;

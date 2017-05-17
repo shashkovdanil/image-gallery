@@ -1,14 +1,20 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 
-import css from '../styles/Image.less';
+import '../styles/Image.less';
 
 const Image = ({ src, width, name }) => (
   <div className="flex-item">
     <figure>
-      <img src={src} style={{ width }} />
+      <img src={src} style={{ width }} alt="oops..." />
       <figcaption>{name}</figcaption>
     </figure>
   </div>
 );
+
+Image.propTypes = {
+  src: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  width: PropTypes.string.isRequired,
+};
 
 export default Image;
